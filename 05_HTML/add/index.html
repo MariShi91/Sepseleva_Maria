@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Заполните анкету</h1> 
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" name="personal_data">
+        <fieldset>
+            <legend>Личные данные</legend>
+            <input type="text" maxlength="25" required autofocus pattern="^[А-Яа-яЁё]+$" name="surname" placeholder="Фамилия">
+            <br><input type="text" maxlength="20" required pattern="^[А-Яа-яЁё]+$" name="name" placeholder="Имя">
+            <br><input type="text" maxlength="24" required pattern="^[А-Яа-яЁё]+$" name="patronimic" placeholder="Отчество">
+        <fieldset>
+            <legend>Паспортные данные</legend>
+             <input type="text" name="passport_series" required pattern="[A-Z]{2}" size="2">
+             <input type="text" name="passport_num" required pattern="[0-9]{7}" size="10">
+         </fieldset>
+        <fieldset>
+            <legend>Дата рождения</legend>
+            <input type="text" name="year" pattern="[0-9]{4}" size="4">
+            <br><select name="months" id="">
+                <option value="month1">Январь</option>
+                <option value="month2">Февраль</option>
+                <option value="month3">Март</option>
+                <option value="month4">Апрель</option>
+                <option value="month5">Май</option>
+                <option value="month6">Июнь</option>
+                <option value="month7">Июль</option>
+                <option value="month8">Август</option>
+                <option value="month9">Сентябрь</option>
+                <option value="month10">Октябрь</option>
+                <option value="month11">Ноябрь</option>
+                <option value="month12">Декабрь</option>
+            </select>
+            <br><input type="number" min="1" max="31" step="1">
+        </fieldset>
+            <select name="nationality" id="" required>
+                <option value="BY">РБ</option>
+                <option value="RU">РФ</option>
+                <option value="GR">GR</option>
+                <option value="GB">GB</option>
+            </select>
+            <br><span>Адрес:</span>
+            <br><textarea name="address" id=""></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Интересы</legend>
+            <fieldset>
+                <legend>Хобби</legend>
+                <span>
+                    <input type="checkbox" name="hobby[]" value="hob1">Рыбалка
+                    <br><input type="checkbox" name="hobby[]" value="hob2">Асторономия
+                    <br><input type="checkbox" name="hobby[]" value="hob3">Дайвинг
+                    <br><input type="checkbox" name="hobby[]" value="hob4">Марки
+                </span>
+            </fieldset>
+            <fieldset>
+                <legend>Домашние животные(возможность выбора нескольких вариантов)</legend>
+                <select name="pets" id="" multiple size="12">
+                    <optgroup label="Попугаи">
+                        <option value="parrot1">Волнистый</option>
+                        <option value="parrot2">Ара</option>
+                        <option value="parrot3">Неразлучник</option>
+                    </optgroup>
+                    <optgroup label="Рыба">
+                        <option value="fish1">Караси</option>
+                        <option value="fish2">Окуни</option>
+                        <option value="fish3">Осетр</option>
+                    </optgroup>
+                    <optgroup label="Птицы">
+                        <option value="bird1">Стая ворон</option>
+                        <option value="bird2">Аист</option>
+                        <option value="bird3">Архиоптерикс</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+        </fieldset>
+        <fieldset>
+            <legend>Данные для входа и восстановления пароля</legend>
+            <input type="text" name="login" placeholder="Логин" pattern="[A-Za-z]{5,20}" required maxlength="20">
+            <br><input type="password" name="password" placeholder="Пароль" pattern="[A-Za-z]{10,20}" required maxlength="20" autocomplete="off">
+        </fieldset>
+        <fieldset>
+            <legend>Координаты</legend>
+            <input type="email" placeholder="Введите адрес почты">
+            <br><input type="url" placeholder="Введите адрес сайта">
+        </fieldset>
+        <fieldset>
+            <legend>Цифры</legend>
+            <input type="number" min="-2.5" max="2.5" step="0.1" name="number">
+            <br><input type="range" min="1" max="10" step="1" name="range_num">
+        </fieldset>
+        <fieldset>
+            <legend>Кнопки управления</legend>
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Сбросить">
+            <br><button disabled><img width="47" height="48" src="data:image/jpeg;base64,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"></button>
+        </fieldset>
+    </form> 
+</body>
+</html>

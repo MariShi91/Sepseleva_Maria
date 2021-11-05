@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+    <table width="700px">
+        <tr>
+            <td>
+                <h3>Простая форма поиска с вариантами:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="get" name="search_no_opt">
+                    <fieldset>
+                        <legend>Строка поиска</legend>
+                        <input type="text" maxlength="10" name="request1" >
+                        <input type="submit" value="Искать">
+                        <br><span><input type="radio" name="search1" value="site" checked>на сайте</span>
+                        <span><input type="radio" name="search1" value="google">в google</span>  
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <h3>Простая форма поиска с вариантами:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="get" name="search_with_opt">
+                    <fieldset>
+                        <legend>Строка поиска</legend>
+                        <input type="text" name="request2" required autofocus>
+                        <input type="submit" value="Искать">
+                        <br><span><input type="radio" name="search2" value="site" checked>на сайте</span>
+                        <span><input type="radio" name="search2" value="google">в google</span>  
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Простая форма авторизации:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="post" name="auth">
+                    <fieldset>
+                        <legend>Авторизируйтесь</legend>
+                        <span><input type="text" name="login" required> Логин</span>
+                        <br><br><span><input type="password" name="password" required> Пароль</span>
+                        <br><span><input type="checkbox" name="remain">Оставаться в системе</span>
+                        <br><input type="submit" value="Войти">
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <h3>Опрос(голосование):</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="get" name="poll">
+                    <fieldset>
+                        <legend>Как Вам?</legend>
+                        <p>
+                            <input type="radio" name="opinion" value="opinion1">ничего
+                            <br><input type="radio" name="opinion" value="opinion2">неплохо
+                            <br><input type="radio" name="opinion" value="opinion3">хорошо
+                            <br><input type="radio" name="opinion" value="opinion4">супер
+                        </p>
+                        <input type="submit" value="Отправить">
+                        <input type="hidden" name="date_voite" value="2013.12.31">
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Отзыв:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="post" name="review">
+                    <fieldset>
+                        <legend>Отставьте Ваш отзыв</legend>
+                        <p>
+                            <input type="text" name="name" required> Имя
+                            <br><br><input type="email" name="email" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" required> e-mail
+                        </p>
+                        <textarea name="written_review" placeholder="Форма отправки"></textarea>
+                        <br><input type="submit" value="Отправить">
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <h3>Выпадающий и мульти списки:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="post" name="list">
+                    <fieldset>
+                        <legend>Города РБ</legend>
+                        <select name="cities1">
+                            <optgroup label="Города РБ">
+                                <option value="city1">Брест</option>
+                                <option value="city2">Минск</option>
+                                <option value="city3">Витебск</option>
+                            </optgroup>
+                            <optgroup label="Города России">
+                                <option value="city4">Москва</option>
+                                <option value="city5">Рязань</option>
+                                <option value="city6">Магадан</option>
+                            </optgroup>
+                        </select>
+                        <select name="cities2" size="8">
+                            <optgroup label="Города РБ">
+                                <option value="city1">Брест</option>
+                                <option value="city2">Минск</option>
+                                <option value="city3">Витебск</option>
+                            </optgroup>
+                            <optgroup label="Города России">
+                                <option value="city4">Москва</option>
+                                <option value="city5">Рязань</option>
+                                <option value="city6">Магадан</option>
+                            </optgroup>
+                        </select>
+                        <input type="submit" value="Ок">
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Загрузка файла на сервер:</h3>
+                <form action=http://fe.it-academy.by/TestForm.php" method="post" name="upload" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Upload</legend>
+                        <p>
+                            <input type="file" name="upload_file">
+                            <br>Срок хранения(года):
+                            <br><input type="text" name="year">
+                            <input type="submit" value="Загрузить">
+                        </p>
+                    </fieldset>
+                </form>
+            </td>
+            <td>
+                <h3>Валидация данных HTML5:</h3>
+                <form action="http://fe.it-academy.by/TestForm.php" method="post" name="validation">
+                    <fieldset>
+                        <legend>Строка поиска</legend>
+                        <input type="text" placeholder="Только русские буквы" pattern="^[А-Яа-я\sЁё]+$"name="text">
+                        <br><br><input type="text" placeholder="Введите номер телефона" pattern="^\+\d{3}-\d{2}-\d{7}$" name="phone_number">
+                        <br><input type="submit" value="Проверить">
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
