@@ -1,0 +1,28 @@
+table {
+    margin: 0 auto;
+    border: 5px solid black;
+    border-collapse: collapse;
+    font-size: 40px;
+    text-align: center;
+    counter-reset: num 65;
+}
+
+table tr td::before{
+    counter-increment: num -1;
+    content: counter(num);
+}
+td {
+    width: 60px;
+    height: 60px;
+    border: 2px solid black;
+}
+
+tr:nth-child(odd)>td:nth-child(odd) {
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even)>td:nth-child(even) {
+    background-color: black;
+    color: white;
+}

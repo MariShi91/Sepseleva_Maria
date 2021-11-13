@@ -1,0 +1,35 @@
+.container {
+    width: 750px;
+    margin: 0 auto;
+}
+.container>div {
+    border: 1px solid #bbb;
+    border-radius: 0 20px;
+    padding: 0 0 10px 0;
+}
+
+p>a::before {
+    content: url(img/extref.png);
+}
+
+div>a[href$='.doc']::after {
+    content: url(img/logo-doc.jpg);
+}
+div>a[href$='.pdf']::after {
+    content: url(img/logo-pdf.png);
+}
+div>a[href$='.zip']::after {
+    content: url(img/logo-zip.gif);
+}
+ul {
+    list-style:none;
+}
+ul>li::before {
+    content: url(img/logo-list.jpg);
+}
+li>img {
+    display: none;
+}
+li>a:hover +img {
+    display: inline-block;
+}
