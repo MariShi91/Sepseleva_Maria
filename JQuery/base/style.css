@@ -1,0 +1,33 @@
+caption {
+    caption-side: bottom;
+    text-align: center;
+    text-transform: uppercase;
+    color: gray;
+    font-weight: normal;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;   
+    border: 3px dotted gray;
+}
+
+thead {
+    background-color: #888;
+    color: white;
+    text-align: center;
+}
+
+
+ tr, td {
+     border: 1px dotted gray;
+ }
+
+ tr>td:first-child {
+     font-weight: bold;
+ }
+
+ tr>td:not(tr>td:first-child) {
+     text-align: center;
+ }
+

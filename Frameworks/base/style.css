@@ -1,0 +1,40 @@
+.container  {
+    width: 90%;
+    margin: 0 auto;
+}
+.menu1 {
+    text-decoration: underline;
+    list-style: circle;
+}
+
+.item {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.title { 
+   color: #4b8abb;   
+}
+
+.anchor {
+    text-decoration: underline;
+}
+.python{
+    display: inline-block;
+    margin-top: 30px;
+ }
+
+ .title-bold {
+     font-weight: bold;
+ }
+ 
+ .text_bold {
+     font-weight: bold;
+ }
+
+ .bold_italic {
+     font-weight: bold;
+     font-style: italic;
+ }
+ .text_italic {
+     font-style: italic;
+ }

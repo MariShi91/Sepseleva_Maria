@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+        fieldset {
+            width: 500px;
+        }
+        input {
+            margin-bottom: 10px; 
+        }
+        .success {
+            background-color: green;
+        }
+        .failure {
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Проверка пароля</h1>
+    <form action="http://fe.it-academy.by/TestForm.php" method="post" name="password_validation">
+        <fieldset>
+            <span><input type="text" name="password1" required class="password1 password" autocomplete="off">* Пароль</span>
+            <br><span><input type="text" name="password2" required class="password2 password" autocomplete="off">* Повторите пароль</span>
+            <br> <input type="submit" value="Отправить" class="button" disabled>
+        </fieldset>
+    </form>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+    </script>
+    <script>
+    $('document').ready(function ($) {
+        $('.password1').keyup (function () {
+            $('.password').addClass('success');
+        })
+
+        $ ('.password2').keyup (function() {
+            var password1 = $('.password1').val();
+            var password2 = $('.password2').val();
+            if (password1 != password2) {
+                $('.password').removeClass('success').addClass('failure');
+
+            }
+            else {
+                $('.password').removeClass('failure').addClass('success');
+                $('.button').removeAttr('disabled');
+            }
+        })
+    
+    })
+    </script>
+</body>
+</html>
